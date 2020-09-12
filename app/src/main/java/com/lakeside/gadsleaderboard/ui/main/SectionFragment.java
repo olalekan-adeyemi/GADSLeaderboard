@@ -1,6 +1,7 @@
 package com.lakeside.gadsleaderboard.ui.main;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,15 +14,20 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.lakeside.gadsleaderboard.R;
+import com.lakeside.gadsleaderboard.ui.model.Leader;
+
+import java.util.List;
 
 /**
  * A placeholder fragment containing a simple view.
  */
 public class SectionFragment extends Fragment {
 
+    private static final String TAG = "SectionFragment";
     private static final String ARG_SECTION_NUMBER = "section_number";
 
     private LeaderBoardViewModel viewModel;
+    private int mIndex;
 
     public static SectionFragment newInstance(int index) {
         SectionFragment fragment = new SectionFragment();
@@ -37,11 +43,11 @@ public class SectionFragment extends Fragment {
         //pageViewModel = ViewModelProviders.of(this).get(LeaderBoardViewModel.class);
         viewModel = new ViewModelProvider(this).get(LeaderBoardViewModel.class);
 
-        int index = 1;
+        mIndex = 0;
         if (getArguments() != null) {
-            index = getArguments().getInt(ARG_SECTION_NUMBER);
+            mIndex = getArguments().getInt(ARG_SECTION_NUMBER);
         }
-        viewModel.setIndex(index);
+        //viewModel.setIndex(index);
     }
 
     @Override
@@ -49,13 +55,21 @@ public class SectionFragment extends Fragment {
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_leader_board, container, false);
-        //final TextView textView = root.findViewById(R.id.section_label);
-        viewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                //textView.setText(s);
-            }
-        });
+
+        if(mIndex == 0) {
+
+            viewModel.getHours().observe(getViewLifecycleOwner(), leaders -> {
+                Log.d(TAG, "onChange, Section to query is learning leaders " + leaders);
+            });
+
+        }else {
+
+            viewModel.getSkillIQ().observe(getViewLifecycleOwner(), leaders -> {
+                Log.d(TAG, "onChange, Section to query is skillIQ leader " + leaders);
+            });
+        }
+
+
         return root;
     }
 }
