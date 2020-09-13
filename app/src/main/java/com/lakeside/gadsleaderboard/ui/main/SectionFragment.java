@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -31,6 +32,7 @@ public class SectionFragment extends Fragment {
 
     private LeaderBoardViewModel viewModel;
     private int mIndex;
+    private ProgressBar progress;
     private RecyclerView recyclerView;
     private LeaderBoardAdapter adapter;
 
@@ -63,6 +65,8 @@ public class SectionFragment extends Fragment {
 
         //Setting the views
         recyclerView = root.findViewById(R.id.recyclerView);
+        progress = root.findViewById(R.id.progress);
+        progress.setVisibility(View.VISIBLE);
         adapter = new LeaderBoardAdapter(getContext());
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -74,6 +78,7 @@ public class SectionFragment extends Fragment {
             viewModel.getHours().observe(getViewLifecycleOwner(), leaders -> {
                 //Log.d(TAG, "onChange, Section to query is learning leaders " + leaders);
                 adapter.setLeaders(leaders);
+                progress.setVisibility(View.INVISIBLE);
             });
 
         }else {
@@ -81,6 +86,7 @@ public class SectionFragment extends Fragment {
             viewModel.getSkillIQ().observe(getViewLifecycleOwner(), leaders -> {
                 //Log.d(TAG, "onChange, Section to query is skillIQ leader " + leaders);
                 adapter.setLeaders(leaders);
+                progress.setVisibility(View.INVISIBLE);
             });
         }
 
