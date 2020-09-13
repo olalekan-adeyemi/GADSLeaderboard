@@ -1,5 +1,6 @@
 package com.lakeside.gadsleaderboard.ui.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -15,6 +16,7 @@ import android.view.View;
 
 import com.lakeside.gadsleaderboard.R;
 import com.lakeside.gadsleaderboard.ui.main.SectionsPagerAdapter;
+import com.lakeside.gadsleaderboard.ui.submit.SubmitActivity;
 
 public class LeaderBoardActivity extends AppCompatActivity {
 
@@ -30,14 +32,10 @@ public class LeaderBoardActivity extends AppCompatActivity {
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
 
+    }
 
-        /*FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
+    public void submit(View view) {
+        //Click action on submit
+        startActivity(new Intent(this, SubmitActivity.class));
     }
 }

@@ -6,4 +6,5 @@
     <string name="leader_board_image">leader board image</string>
     <string name="learning_hours_format">%d learning hours, %s.</string>
     <string name="skill_IQ_format">%d Skill IQ Score, %s.</string>
+    <string name="btn_submit_text">Submit</string>
 </resources>

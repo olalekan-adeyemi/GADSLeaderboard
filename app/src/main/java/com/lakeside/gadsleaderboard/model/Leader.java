@@ -1,4 +1,4 @@
-package com.lakeside.gadsleaderboard.ui.model;
+package com.lakeside.gadsleaderboard.model;
 
 import com.google.gson.annotations.SerializedName;
 

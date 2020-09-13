@@ -1,4 +1,4 @@
-package com.lakeside.gadsleaderboard.ui.service;
+package com.lakeside.gadsleaderboard.service;
 
 import java.util.concurrent.TimeUnit;
 

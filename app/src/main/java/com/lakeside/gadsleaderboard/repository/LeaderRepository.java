@@ -1,12 +1,12 @@
-package com.lakeside.gadsleaderboard.ui.repository;
+package com.lakeside.gadsleaderboard.repository;
 
 import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
 
-import com.lakeside.gadsleaderboard.ui.model.Leader;
-import com.lakeside.gadsleaderboard.ui.service.LeaderBoardAPI;
-import com.lakeside.gadsleaderboard.ui.service.ServiceBuilder;
+import com.lakeside.gadsleaderboard.model.Leader;
+import com.lakeside.gadsleaderboard.service.LeaderBoardAPI;
+import com.lakeside.gadsleaderboard.service.ServiceBuilder;
 
 import java.util.List;
 

@@ -1,8 +1,6 @@
-package com.lakeside.gadsleaderboard.ui.adapter;
+package com.lakeside.gadsleaderboard.adapter;
 
 import android.content.Context;
-import android.content.res.Resources;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,13 +8,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.core.widget.ImageViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.lakeside.gadsleaderboard.R;
-import com.lakeside.gadsleaderboard.ui.model.Leader;
+import com.lakeside.gadsleaderboard.model.Leader;
 
 import java.util.ArrayList;
 import java.util.List;

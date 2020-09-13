@@ -1,13 +1,11 @@
-package com.lakeside.gadsleaderboard.ui.main;
+package com.lakeside.gadsleaderboard.viewModel;
 
-import androidx.arch.core.util.Function;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.Transformations;
 import androidx.lifecycle.ViewModel;
 
-import com.lakeside.gadsleaderboard.ui.model.Leader;
-import com.lakeside.gadsleaderboard.ui.repository.LeaderRepository;
+import com.lakeside.gadsleaderboard.model.Leader;
+import com.lakeside.gadsleaderboard.repository.LeaderRepository;
 
 import java.util.List;
 

@@ -1,26 +1,23 @@
 package com.lakeside.gadsleaderboard.ui.main;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.lakeside.gadsleaderboard.R;
-import com.lakeside.gadsleaderboard.ui.adapter.LeaderBoardAdapter;
-import com.lakeside.gadsleaderboard.ui.model.Leader;
-
-import java.util.List;
+import com.lakeside.gadsleaderboard.ui.submit.SubmitActivity;
+import com.lakeside.gadsleaderboard.adapter.LeaderBoardAdapter;
+import com.lakeside.gadsleaderboard.viewModel.LeaderBoardViewModel;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -34,6 +31,7 @@ public class SectionFragment extends Fragment {
     private int mIndex;
     private ProgressBar progress;
     private RecyclerView recyclerView;
+    private Button btnSubmit;
     private LeaderBoardAdapter adapter;
 
     public static SectionFragment newInstance(int index) {
@@ -93,4 +91,5 @@ public class SectionFragment extends Fragment {
 
         return root;
     }
+
 }

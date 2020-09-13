@@ -1,6 +1,6 @@
-package com.lakeside.gadsleaderboard.ui.service;
+package com.lakeside.gadsleaderboard.service;
 
-import com.lakeside.gadsleaderboard.ui.model.Leader;
+import com.lakeside.gadsleaderboard.model.Leader;
 
 import java.util.List;
 
