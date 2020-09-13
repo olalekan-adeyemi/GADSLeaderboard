@@ -3,4 +3,7 @@
     <string name="title_activity_leader_board">LEADERBOARD</string>
     <string name="learning_leaders">Learning Leaders</string>
     <string name="skillIQ_leaders">Skill IQ Leaders</string>
+    <string name="leader_board_image">leader board image</string>
+    <string name="learning_hours_format">%d learning hours, %s.</string>
+    <string name="skill_IQ_format">%d Skill IQ Score, %s.</string>
 </resources>

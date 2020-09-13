@@ -47,7 +47,7 @@ public class LeaderRepository {
             public void onResponse(Call<List<Leader>> call, Response<List<Leader>> response) {
                 if(response.isSuccessful()) {
                     if(response.body() != null) {
-                        Log.d(TAG, "onChange, response from API: " + response.body().toString());
+                        //Log.d(TAG, "onChange, response from API: " + response.body().toString());
                         hours.setValue(response.body());
                     }
                 }
@@ -72,7 +72,7 @@ public class LeaderRepository {
                 if(response.isSuccessful()) {
                     if(response.body() != null) {
 
-                        Log.d(TAG, "onChange, response from API: " + response.body().toString());
+                        //Log.d(TAG, "onChange, response from API: " + response.body().toString());
                         skillIQ.setValue(response.body());
                     }
                 }

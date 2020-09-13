@@ -1,6 +1,7 @@
 package com.lakeside.gadsleaderboard.ui.main;
 
 import android.content.Context;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
@@ -9,6 +10,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.lakeside.gadsleaderboard.R;
+
+import org.jetbrains.annotations.NotNull;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
@@ -25,6 +28,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         mContext = context;
     }
 
+    @NotNull
     @Override
     public Fragment getItem(int position) {
         // getItem is called to instantiate the fragment for the given page.

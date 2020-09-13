@@ -12,8 +12,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.lakeside.gadsleaderboard.R;
+import com.lakeside.gadsleaderboard.ui.adapter.LeaderBoardAdapter;
 import com.lakeside.gadsleaderboard.ui.model.Leader;
 
 import java.util.List;
@@ -28,6 +31,8 @@ public class SectionFragment extends Fragment {
 
     private LeaderBoardViewModel viewModel;
     private int mIndex;
+    private RecyclerView recyclerView;
+    private LeaderBoardAdapter adapter;
 
     public static SectionFragment newInstance(int index) {
         SectionFragment fragment = new SectionFragment();
@@ -40,7 +45,7 @@ public class SectionFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //pageViewModel = ViewModelProviders.of(this).get(LeaderBoardViewModel.class);
+
         viewModel = new ViewModelProvider(this).get(LeaderBoardViewModel.class);
 
         mIndex = 0;
@@ -56,16 +61,26 @@ public class SectionFragment extends Fragment {
             Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_leader_board, container, false);
 
+        //Setting the views
+        recyclerView = root.findViewById(R.id.recyclerView);
+        adapter = new LeaderBoardAdapter(getContext());
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setAdapter(adapter);
+        recyclerView.setHasFixedSize(true);
+
         if(mIndex == 0) {
 
             viewModel.getHours().observe(getViewLifecycleOwner(), leaders -> {
-                Log.d(TAG, "onChange, Section to query is learning leaders " + leaders);
+                //Log.d(TAG, "onChange, Section to query is learning leaders " + leaders);
+                adapter.setLeaders(leaders);
             });
 
         }else {
 
             viewModel.getSkillIQ().observe(getViewLifecycleOwner(), leaders -> {
-                Log.d(TAG, "onChange, Section to query is skillIQ leader " + leaders);
+                //Log.d(TAG, "onChange, Section to query is skillIQ leader " + leaders);
+                adapter.setLeaders(leaders);
             });
         }
 

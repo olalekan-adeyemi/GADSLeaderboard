@@ -23,7 +23,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
-            <androidx.appcompat.widget.AppCompatImageView
+            <ImageView
                 android:id="@+id/appCompatImageView"
                 android:layout_width="150dp"
                 android:layout_height="80dp"
@@ -34,30 +34,35 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/leader_board_image"
                 tools:srcCompat="@drawable/top_learner" />
 
             <TextView
                 android:id="@+id/learnerName"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
                 android:fontFamily="sans-serif"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="16sp"
                 android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/appCompatImageView"
                 app:layout_constraintTop_toTopOf="@+id/appCompatImageView"
                 tools:text="Leader's name" />
 
             <TextView
                 android:id="@+id/learnerAttributes"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                tools:text="223 learning hours, Kenya."
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/learnerName"
-                app:layout_constraintTop_toBottomOf="@+id/learnerName" />
+                app:layout_constraintTop_toBottomOf="@+id/learnerName"
+                tools:text="223 learning hours, Kenya." />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

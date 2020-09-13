@@ -12,6 +12,9 @@ public class Leader {
     @SerializedName("score")
     private int score;
 
+    @SerializedName("hours")
+    private int hours;
+
     @SerializedName("country")
     private String country;
 
@@ -32,6 +35,14 @@ public class Leader {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public int getHours() {
+        return hours;
+    }
+
+    public void setHours(int hours) {
+        this.hours = hours;
     }
 
     public String getCountry() {
